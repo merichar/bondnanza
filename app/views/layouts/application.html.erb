@@ -8,7 +8,49 @@
 </head>
 <body>
 
-<%= yield %>
+<body>
+
+  <div class="container">
+
+    <div class="bondnanza-header">
+      <h1 class="bondnanza-title">Heidi’s 40th Birthday Bondnanza</h1>
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-3 bondnanza-sidebar">
+        <div class="sidebar-module bondnanza-instagram-feed">
+          <%= render 'layouts/bondnanza_instagram' %>
+        </div>
+        
+        <div class="sidebar-module">
+          <h4>About</h4>
+          <p>
+            Our favorite Cinephile, Heidi, is celebrating her
+            milestone 40th birthday with the ultimate movie marathon:
+            all 24 James Bond movies (yes, even Never Say Never Again)
+            watched over one weekend. Can we do it? Will we succeed?
+            Will good triumph over evil? Will Mr. Bond make it out
+            alive? Follow along!
+          </p>
+        </div>
+      </div><!-- /.bondnanza-sidebar -->
+
+      <div class="col-sm-8 bondnanza-main">
+        <%= yield %>
+        
+        <div class="bondnanza-twitter-feed">
+          <%= render 'layouts/bondnanza_instagram' %>
+        </div>
+
+      </div><!-- /.bondnanza-main -->
+
+    </div><!-- /.row -->
+
+  </div><!-- /.container -->
+
+  <footer>
+  </footer>
 
 </body>
 </html>
