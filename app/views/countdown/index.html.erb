@@ -1,10 +1,26 @@
-<div class="bondnanza-now-playing">
-  <h2>Now Showing: TITLE</h2>
+<div class="bondnanza-now-playing" style="clear: both;">
+  <% unless @now_showing.nil? %>
+  <h2>Now Showing: <%= @now_showing.title %> (<%= @now_showing.release_date.year %>)</h2>
 
-  <div class="bondnanza-bondninfo">
+  <div class="bondnanza-poster" style="width: 300px; float: left;">
+    <%= image_tag @now_showing.poster_url, alt: "Poster", width: "250px" %>
   </div>
+
+  <div class="bondnanza-info" style="width: 300px;float: left;">
+    <h3><%= @now_showing.tagline %></h3>
+    <h4>Runtime: <%= distance_of_time_in_words @now_showing.runtime %></h4>
+    <h4>Rating: <%= @now_showing.rating %></h4>
+
+    <h4>Plot:</h4>
+    <p>      
+      <%= @now_showing.plot %>
+    </p>
+  </div>
+  <% end %>
 </div>
 
-<div class="bondnanza-upcoming">
-  <h2>Coming Up Next: TITLE</h2>
+<div class="bondnanza-upcoming" style="float: left; clear: left; margin: 40px 0; padding: 10px 20px; border: 2px solid #222222;">
+  <% unless @upcoming.nil? %>
+  <h2>Coming Up Next: <%= @upcoming.title %></h2>
+  <% end %>
 </div>

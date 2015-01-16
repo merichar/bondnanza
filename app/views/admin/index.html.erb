@@ -1,0 +1,11 @@
+<% if @movie.nil? %>
+<h1>You are not watching any Bond.</h1>
+<% else %>
+<h1>You are watching: <%= @@imdb.find_by_id(@movie.imdb).title %></h1>
+<% end %>
+
+<%= form_tag( "/admin",method: "post") do  %>
+<%= button_tag "Next Bond", :class => 'btn btn-lg btn-primary', value: "next" %>
+<%= button_tag "Previous Bond", :class => 'btn btn-lg btn-warning', value: "prev" %>
+<%= button_tag "Sleep", :class => 'btn btn-lg btn-danger', value: "sleep" %>
+<% end %>
