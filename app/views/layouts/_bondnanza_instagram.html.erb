@@ -1,0 +1,18 @@
+<%= image_tag "instagram.gif", width: "50px" %>
+<h4>Instagram</h4>
+<p>#HeidiBondnanza</p>
+
+<% client = Instagram.client %>
+
+<% tags = client.tag_search('HeidiBondnanza') %>
+<%# tags = client.tag_search('cat') %>
+<% if tags.size > 0 %>
+<% display_count = 0 %>
+<% for media_item in client.tag_recent_media(tags[0].name) %>
+<% if display_count >= 3 %>
+<% break %>
+<% end %>
+<% display_count = display_count + 1 %>
+<%= image_tag media_item.images.thumbnail.url %>
+<% end %>
+<% end %>
