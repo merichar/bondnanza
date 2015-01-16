@@ -1,5 +1,7 @@
 class AdminController < ApplicationController
   def index
+    @imdb = FilmBuff::IMDb.new
+    
     @movie = WatchStatus.find_by_key("watching").movies[0]
   end
 

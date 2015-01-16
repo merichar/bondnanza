@@ -1,7 +1,7 @@
 <% if @movie.nil? %>
 <h1>You are not watching any Bond.</h1>
 <% else %>
-<h1>You are watching: <%= @@imdb.find_by_id(@movie.imdb).title %></h1>
+<h1>You are watching: <%= @imdb.find_by_id(@movie.imdb).title %></h1>
 <% end %>
 
 <%= form_tag( "/admin",method: "post") do  %>
