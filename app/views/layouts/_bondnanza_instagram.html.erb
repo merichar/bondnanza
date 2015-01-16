@@ -1,6 +1,9 @@
+
 <%= image_tag "instagram.gif", width: "50px" %>
 <h4>Instagram</h4>
+<a href="#" class="btn btn-link" data-toggle="modal" data-target="#instagram">
 <p>#HeidiBondnanza</p>
+</a>
 
 <% client = Instagram.client %>
 
@@ -16,3 +19,23 @@
 <%= image_tag media_item.images.thumbnail.url %>
 <% end %>
 <% end %>
+
+
+
+<div class="modal fade" id="instagram" tabindex="-1" role="dialog" aria-labelledby="instagram" aria-hidden="true">
+  <div class="modal-dialog" style="width: 700px; text-align: center">
+    <div class="modal-content">
+      <div class="modal-body">
+        <% for media_item in client.tag_recent_media(tags[0].name) %>
+        <%= image_tag media_item.images.standard_resolution.url %>
+        <% end %>
+      </div>
+            <div class="modal-footer">
+        <h1>#HeidiBondnanza</h1>
+<!--        <button type="button" class="btn btn-primary" style="width: 50px;" data-dismiss="modal">Close</button>-->
+      </div>
+
+
+    </div>
+  </div>
+</div>
