@@ -2,9 +2,9 @@ class CountdownController < ApplicationController
   def index
     @imdb = FilmBuff::IMDb.new
     
-    movie = WatchStatus.find_by_key("watching").movies.first
-    unless movie.nil?
-      @now_showing = @imdb.find_by_id(movie.imdb)
+    @movie = WatchStatus.find_by_key("watching").movies.first
+    unless @movie.nil?
+      @now_showing = @imdb.find_by_id(@movie.imdb)
     end
 
     movie = WatchStatus.find_by_key("unwatched").movies.first

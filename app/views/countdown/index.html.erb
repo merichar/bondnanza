@@ -3,7 +3,8 @@
   <h2>Now Showing: <%= @now_showing.title %> (<%= @now_showing.release_date.year %>)</h2>
 
   <div class="bondnanza-poster" style="width: 300px; float: left;">
-    <%= image_tag @now_showing.poster_url, alt: "Poster", width: "250px" %>
+    <%#= image_tag @now_showing.poster_url, alt: "Poster", width: "250px" %>
+        <%= image_tag @movie.imdb+'.jpg', alt: "Poster", width: "250px" %>
   </div>
 
   <div class="bondnanza-info" style="width: 300px;float: left;">
